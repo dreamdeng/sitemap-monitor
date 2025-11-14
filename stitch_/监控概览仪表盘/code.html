@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sitemap Monitor Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4F46E5",
+                        "background-light": "#F9FAFB",
+                        "background-dark": "#111827",
+                        "component-light": "#FFFFFF",
+                        "component-dark": "#1F2937",
+                        "text-primary-light": "#111827",
+                        "text-primary-dark": "#F9FAFB",
+                        "text-secondary-light": "#6B7280",
+                        "text-secondary-dark": "#9CA3AF",
+                        "border-light": "#E5E7EB",
+                        "border-dark": "#374151"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5 md:px-10 lg:px-20 xl:px-40">
+<div class="layout-content-container flex flex-col w-full max-w-7xl flex-1 gap-8">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 md:px-6 lg:px-10 py-4">
+<div class="flex items-center gap-4">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em]">Sitemap Monitor</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end items-center gap-8">
+<div class="flex items-center gap-9">
+<a class="text-primary text-sm font-semibold leading-normal" href="#">Dashboard</a>
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Websites</a>
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Settings</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex cursor-pointer items-center justify-center rounded-full size-10 bg-transparent text-text-secondary-light dark:text-text-secondary-dark hover:bg-primary/10 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSvDOR79wjqo6VBgY5x3jlRNHfQ_9YYS_GIQMRO1m9D2hZxeg6UpIWwJagz1d38TySqKp5Vr2CfojL1DMWWjqIMllV59y8sz8BGWbWBHB2dICHgMiqhfEdNF4Tmc1DaVqvwkX-FMsSXLPnlmowRj8NP1072qPVbhsk45q3PPkFw6E606QgUsvtEGV0gM8It4IH9Wi2lbSaQXSBJN_OoU8BDGHi5zyx6P0Q3u0UlO7jg5aTFin0eu-n955zPYPW-zBw89pFpw4IgSpT");'></div>
+</div>
+</div>
+<button class="md:hidden flex cursor-pointer items-center justify-center rounded-full size-10 bg-transparent text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex flex-col gap-6 px-4 md:px-6 lg:px-10">
+<!-- PageHeading -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div>
+<h1 class="text-text-primary-light dark:text-text-primary-dark text-4xl font-black leading-tight tracking-[-0.033em]">Dashboard</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark mt-1">Welcome back, here's a summary of your sitemap activity.</p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2 hover:bg-opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-base">add</span>
+<span class="truncate">Add New Website</span>
+</button>
+</div>
+<!-- Chips -->
+<div class="flex gap-2 p-1 overflow-x-auto">
+<div class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-lg bg-primary/20 dark:bg-primary/30 text-primary dark:text-white pl-4 pr-4">
+<p class="text-sm font-medium leading-normal">Today</p>
+</div>
+<div class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-lg bg-component-light dark:bg-component-dark border border-border-light dark:border-border-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors pl-4 pr-4">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">Last 7 Days</p>
+</div>
+<div class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-lg bg-component-light dark:bg-component-dark border border-border-light dark:border-border-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors pl-4 pr-4">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">Last 30 Days</p>
+</div>
+<div class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-lg bg-component-light dark:bg-component-dark border border-border-light dark:border-border-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors pl-4 pr-4">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">Custom Range</p>
+</div>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-component-light dark:bg-component-dark border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3 text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-lg">public</span>
+<p class="text-base font-medium leading-normal">Active Monitored Sites</p>
+</div>
+<p class="text-text-primary-light dark:text-text-primary-dark tracking-light text-4xl font-bold leading-tight">15</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-component-light dark:bg-component-dark border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3 text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-lg">article</span>
+<p class="text-base font-medium leading-normal">New Pages Today</p>
+</div>
+<p class="text-text-primary-light dark:text-text-primary-dark tracking-light text-4xl font-bold leading-tight">128</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-component-light dark:bg-component-dark border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3 text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-lg">data_exploration</span>
+<p class="text-base font-medium leading-normal">Total Pages Discovered</p>
+</div>
+<p class="text-text-primary-light dark:text-text-primary-dark tracking-light text-4xl font-bold leading-tight">2,450</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-component-light dark:bg-component-dark border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3 text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-lg text-red-500">error</span>
+<p class="text-base font-medium leading-normal">Errors/Issues</p>
+</div>
+<p class="text-text-primary-light dark:text-text-primary-dark tracking-light text-4xl font-bold leading-tight">3</p>
+</div>
+</div>
+<!-- Charts & Recent Activity -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 flex min-w-72 flex-1 flex-col gap-4 rounded-lg border border-border-light dark:border-border-dark bg-component-light dark:bg-component-dark p-6">
+<p class="text-text-primary-light dark:text-text-primary-dark text-lg font-semibold leading-normal">New Pages Discovered Over Time</p>
+<div class="flex items-baseline gap-4">
+<p class="text-text-primary-light dark:text-text-primary-dark tracking-light text-4xl font-bold leading-tight truncate">2,450</p>
+<div class="flex gap-1">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Last 30 Days</p>
+<p class="text-green-600 dark:text-green-500 text-sm font-medium leading-normal">+15.3%</p>
+</div>
+</div>
+<div class="flex min-h-[220px] flex-1 flex-col justify-end gap-8 pt-4">
+<svg fill="none" height="100%" preserveaspectratio="none" viewbox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#paint0_linear_chart)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#4F46E5" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_chart" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#4F46E5" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#4F46E5" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-around">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-bold leading-normal tracking-[0.015em]">W1</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-bold leading-normal tracking-[0.015em]">W2</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-bold leading-normal tracking-[0.015em]">W3</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-bold leading-normal tracking-[0.015em]">W4</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-bold leading-normal tracking-[0.015em]">W5</p>
+</div>
+</div>
+</div>
+<!-- Recent Activity -->
+<div class="flex flex-col gap-4 rounded-lg border border-border-light dark:border-border-dark bg-component-light dark:bg-component-dark p-6">
+<h3 class="text-text-primary-light dark:text-text-primary-dark text-lg font-semibold leading-normal">Recent Activity</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 text-primary dark:text-indigo-300">
+<span class="material-symbols-outlined text-xl">article</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">
+<span class="font-bold">site-one.com</span> - 5 new pages discovered
+                                            </p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">2 minutes ago</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 text-primary dark:text-indigo-300">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">
+<span class="font-bold">another-site.dev</span> - Sitemap check completed
+                                            </p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">10 minutes ago</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 text-primary dark:text-indigo-300">
+<span class="material-symbols-outlined text-xl">hub</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">
+<span class="font-bold">example-corp.io</span> - Key information extracted
+                                            </p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">1 hour ago</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30 text-red-500 dark:text-red-400">
+<span class="material-symbols-outlined text-xl">error</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">
+<span class="font-bold">failing-site.com</span> - Sitemap fetch failed
+                                            </p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">3 hours ago</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 text-primary dark:text-indigo-300">
+<span class="material-symbols-outlined text-xl">add_circle</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">
+<span class="font-bold">new-domain.com</span> added for monitoring
+                                            </p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Yesterday</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>

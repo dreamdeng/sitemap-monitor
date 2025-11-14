@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Page Details - Sitemap Monitor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4F46E5",
+                        "background-light": "#F9FAFB",
+                        "background-dark": "#111827",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1F2937",
+                        "text-primary-light": "#111827",
+                        "text-primary-dark": "#F9FAFB",
+                        "text-secondary-light": "#6B7281",
+                        "text-secondary-dark": "#9CA3AF",
+                        "border-light": "#E5E7EB",
+                        "border-dark": "#374151"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="flex flex-col w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark">
+<div class="flex flex-col h-full p-4">
+<div class="flex flex-col gap-4 flex-grow">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Sitemap Monitor Logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADHYZSF-kPjhdL1o3xfv8zAJCQduHbdbLJxQmiGKoAJ2Nv1X0HqkCIjmgfbvLLIaKkpP_qBd3_UTmf8ureTZ2uGbenrdcNb0O_GPICEhuyxZgqBpSHvNVgIFZQR_FOddDHgpXYMUKD-f2eoHMunUSDdp-mavWv0ni1PlWuUMwsfOQYO41nDRl2TJv-q-eS5ONMfIlLZHb73BKOE5b0WFkOIliqRZpYDYRTSaUlxeD9-E5oFv1-sMOmNwozD4ElkeOKbEUPST2k9gey');"></div>
+<div class="flex flex-col">
+<h1 class="text-text-primary-light dark:text-text-primary-dark text-base font-bold leading-normal">Sitemap Monitor</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Workspace</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-text-secondary-light dark:text-text-secondary-dark hover:bg-primary/10 rounded" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">monitor_heart</span>
+<p class="text-sm font-bold leading-normal">Monitoring</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-secondary-light dark:text-text-secondary-dark hover:bg-primary/10 rounded" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<p class="text-sm font-medium leading-normal">Reports</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-secondary-light dark:text-text-secondary-dark hover:bg-primary/10 rounded" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-secondary-light dark:text-text-secondary-dark hover:bg-primary/10 rounded" href="#">
+<span class="material-symbols-outlined">help</span>
+<p class="text-sm font-medium leading-normal">Help</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">New Project</span>
+</button>
+<div class="flex flex-col gap-1 border-t border-border-light dark:border-border-dark pt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-text-secondary-light dark:text-text-secondary-dark hover:bg-primary/10 rounded" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium leading-normal">Log out</p>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-6 lg:p-10">
+<div class="mx-auto max-w-7xl">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 items-center">
+<a class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal hover:text-primary" href="#">Monitoring</a>
+<span class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">/</span>
+<a class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal hover:text-primary" href="#">sitemap.xml</a>
+<span class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">/</span>
+<span class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-normal">Page Details</span>
+</div>
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between gap-4 items-center mt-6">
+<div class="flex min-w-72 flex-col gap-2">
+<h1 class="text-text-primary-light dark:text-text-primary-dark text-3xl font-black leading-tight tracking-tight">Page Details</h1>
+<div class="flex items-center gap-2">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-normal truncate">https://example.com/new-feature-page</p>
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary">
+<span class="material-symbols-outlined !text-base">content_copy</span>
+</button>
+</div>
+</div>
+<div class="flex gap-3 flex-wrap justify-start">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined !text-xl">open_in_new</span>
+<span class="truncate">Visit Original Page</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded h-10 px-4 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-primary-light dark:text-text-primary-dark text-sm font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined !text-xl">refresh</span>
+<span class="truncate">Re-fetch Data</span>
+</button>
+</div>
+</div>
+<!-- Information Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+<!-- Main content cards -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- Title Card -->
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-border-light dark:border-border-dark">
+<h3 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em]">Page Title</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base mt-3">Discover Our New Advanced Feature for Enterprise Teams</p>
+</div>
+<!-- Description Card -->
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-border-light dark:border-border-dark">
+<h3 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em]">Meta Description</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base mt-3 leading-relaxed">Learn how our latest feature can help your enterprise team streamline workflows, improve collaboration, and boost productivity. Explore the benefits today.</p>
+</div>
+<!-- Keywords Card -->
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-border-light dark:border-border-dark">
+<h3 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em]">Meta Keywords</h3>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">enterprise solutions</span>
+<span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">team collaboration</span>
+<span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">productivity tools</span>
+<span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">new feature</span>
+</div>
+</div>
+<!-- H1 Tag Card -->
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-border-light dark:border-border-dark">
+<h3 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em]">H1 Tag</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base mt-3">Unlock Peak Productivity with Our Newest Feature</p>
+</div>
+</div>
+<!-- Metadata Panel -->
+<div class="lg:col-span-1">
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-border-light dark:border-border-dark sticky top-10">
+<h3 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em]">Metadata</h3>
+<div class="flex flex-col gap-4 mt-4 text-sm">
+<div class="flex justify-between items-center">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Discovered at</span>
+<span class="text-text-primary-light dark:text-text-primary-dark font-medium">Oct 27, 2023, 10:30 AM</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Last Fetched</span>
+<span class="text-text-primary-light dark:text-text-primary-dark font-medium">Oct 28, 2023, 09:15 PM</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">HTTP Status</span>
+<span class="inline-flex items-center gap-1.5 rounded-full bg-green-100 dark:bg-green-900/50 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300">
+<span class="size-1.5 rounded-full bg-green-500"></span>
+                                        200 OK
+                                    </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Response Time</span>
+<span class="text-text-primary-light dark:text-text-primary-dark font-medium">128ms</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Content Length</span>
+<span class="text-text-primary-light dark:text-text-primary-dark font-medium">48.2 KB</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

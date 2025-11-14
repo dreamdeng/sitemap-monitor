@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Website Management - Sitemap Monitor</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4F46E5",
+              "background-light": "#F3F4F6",
+              "background-dark": "#111827",
+              "content-light": "#FFFFFF",
+              "content-dark": "#1F2937",
+              "text-light": "#111827",
+              "text-dark": "#F9FAFB",
+              "subtext-light": "#6B7280",
+              "subtext-dark": "#9CA3AF",
+              "border-light": "#E5E7EB",
+              "border-dark": "#374151"
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 bg-content-light dark:bg-content-dark p-4 flex flex-col justify-between border-r border-border-light dark:border-border-dark">
+<div>
+<div class="flex items-center gap-3 p-2 mb-6">
+<div class="bg-primary rounded-lg p-2">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">hub</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-base font-bold text-text-light dark:text-text-dark">Sitemap Monitor</h1>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">Admin Panel</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-subtext-light dark:text-subtext-dark hover:bg-primary/10 hover:text-primary" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">public</span>
+<p class="text-sm font-medium">Website Management</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-subtext-light dark:text-subtext-dark hover:bg-primary/10 hover:text-primary" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+</nav>
+</div>
+<div class="flex items-center gap-3 p-2 border-t border-border-light dark:border-border-dark mt-4 pt-4">
+<img class="rounded-full size-10" data-alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXhU5_Gxjzfm8466RYvQkuycXPPQwcCswcDo-Dwk6yPLSFtYyZ32uHc19BjOXtT2viwH4zylyM2wx0nXb4-SB4EayxxOeEbSdaGGtHPTQF1NL8wWsslrSBU9A4qC7HZirC3QlAu-sWkFqBcsgd0BuOwFLvufzkqsJMqNsyi7i78dQmV5Jwm0YlfjD820B09nzsAu1yB_ktmr4xGC1S_gGS64XvfU8Az9rzUTg-qmxLHNN4NyfLB6Tk1oZQb-4Spy9JX4YYT63tb58Q"/>
+<div class="flex flex-col">
+<p class="text-sm font-medium text-text-light dark:text-text-dark">Alex Doe</p>
+<p class="text-xs text-subtext-light dark:text-subtext-dark">alex.doe@example.com</p>
+</div>
+<span class="material-symbols-outlined text-subtext-light dark:text-subtext-dark ml-auto">logout</span>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8">
+<div class="max-w-7xl mx-auto">
+<!-- PageHeading & Actions -->
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<h1 class="text-3xl font-bold text-text-light dark:text-text-dark">Website Management</h1>
+<div class="flex items-center gap-4">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-subtext-light dark:text-subtext-dark">search</span>
+<input class="form-input w-full pl-10 pr-4 py-2 rounded-lg bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark placeholder:text-subtext-light placeholder:dark:text-subtext-dark focus:ring-primary focus:border-primary" placeholder="Search websites..." type="text"/>
+</div>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-medium hover:bg-primary/90">
+<span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+<span class="truncate">Add New Website</span>
+</button>
+</div>
+</div>
+<!-- Table -->
+<div class="bg-content-light dark:bg-content-dark rounded-xl shadow-sm overflow-hidden border border-border-light dark:border-border-dark">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-background-light dark:bg-background-dark border-b border-border-light dark:border-border-dark">
+<tr>
+<th class="px-6 py-4 text-xs font-medium uppercase tracking-wider text-subtext-light dark:text-subtext-dark">Website Name</th>
+<th class="px-6 py-4 text-xs font-medium uppercase tracking-wider text-subtext-light dark:text-subtext-dark">Sitemap URL</th>
+<th class="px-6 py-4 text-xs font-medium uppercase tracking-wider text-subtext-light dark:text-subtext-dark">Status</th>
+<th class="px-6 py-4 text-xs font-medium uppercase tracking-wider text-subtext-light dark:text-subtext-dark">Monitoring Frequency</th>
+<th class="px-6 py-4 text-xs font-medium uppercase tracking-wider text-subtext-light dark:text-subtext-dark">Last Checked</th>
+<th class="px-6 py-4 text-xs font-medium uppercase tracking-wider text-subtext-light dark:text-subtext-dark text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light dark:divide-border-dark">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-text-dark">Company Blog</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-subtext-light dark:text-subtext-dark">https://company.com/sitemap.xml</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+<span class="size-2 bg-green-500 rounded-full"></span>
+                                            Active
+                                        </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-subtext-light dark:text-subtext-dark">Daily</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-subtext-light dark:text-subtext-dark">2023-10-27 10:00 AM</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex justify-end gap-4">
+<button class="text-subtext-light dark:text-subtext-dark hover:text-primary"><span class="material-symbols-outlined" style="font-size: 20px;">edit</span></button>
+<button class="text-subtext-light dark:text-subtext-dark hover:text-red-500"><span class="material-symbols-outlined" style="font-size: 20px;">delete</span></button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-text-dark">Marketing Site</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-subtext-light dark:text-subtext-dark">https://marketing.io/sitemap.xml</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300">
+<span class="size-2 bg-red-500 rounded-full"></span>
+                                            Error
+                                        </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-subtext-light dark:text-subtext-dark">Weekly</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-subtext-light dark:text-subtext-dark">2023-10-26 08:30 AM</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex justify-end gap-4">
+<button class="text-subtext-light dark:text-subtext-dark hover:text-primary"><span class="material-symbols-outlined" style="font-size: 20px;">edit</span></button>
+<button class="text-subtext-light dark:text-subtext-dark hover:text-red-500"><span class="material-symbols-outlined" style="font-size: 20px;">delete</span></button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-text-dark">Product Docs</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-subtext-light dark:text-subtext-dark">https://docs.product.dev/sitemap.xml</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">
+<span class="size-2 bg-yellow-500 rounded-full"></span>
+                                            Pending
+                                        </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-subtext-light dark:text-subtext-dark">Daily</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-subtext-light dark:text-subtext-dark">N/A</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex justify-end gap-4">
+<button class="text-subtext-light dark:text-subtext-dark hover:text-primary"><span class="material-symbols-outlined" style="font-size: 20px;">edit</span></button>
+<button class="text-subtext-light dark:text-subtext-dark hover:text-red-500"><span class="material-symbols-outlined" style="font-size: 20px;">delete</span></button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-text-dark">E-commerce Store</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-subtext-light dark:text-subtext-dark">https://store.shop/sitemap.xml</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+<span class="size-2 bg-green-500 rounded-full"></span>
+                                            Active
+                                        </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-subtext-light dark:text-subtext-dark">Hourly</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-subtext-light dark:text-subtext-dark">2023-10-27 11:15 AM</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex justify-end gap-4">
+<button class="text-subtext-light dark:text-subtext-dark hover:text-primary"><span class="material-symbols-outlined" style="font-size: 20px;">edit</span></button>
+<button class="text-subtext-light dark:text-subtext-dark hover:text-red-500"><span class="material-symbols-outlined" style="font-size: 20px;">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

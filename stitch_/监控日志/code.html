@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>监控日志 - Sitemap Monitor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4F46E5",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121121",
+              "success": "#10B981",
+              "danger": "#EF4444",
+              "text-light-primary": "#111827",
+              "text-light-secondary": "#6B7280",
+              "text-dark-primary": "#F3F4F6",
+              "text-dark-secondary": "#9CA3AF",
+              "border-light": "#E5E7EB",
+              "border-dark": "#374151",
+              "card-light": "#FFFFFF",
+              "card-dark": "#1F2937",
+              "hover-light": "#F3F4F6",
+              "hover-dark": "#374151"
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="flex w-64 flex-col border-r border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-4">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Sitemap Monitor logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmiXUvj-Ez9GyJidh6N_WkNRy6GRoYUjP3azTCLvFtEZJ3fxhP39KG4Jl3k_VozQYraL8sj_0MuP-fBgtl3kSj7CXtc-bqYxiEMsr-7iC76xWZaXxAZSTGfcF1AaDxctgMzOg9s-IuPHY1sEPzkxPxr5ydlqAfwWl7MGGMHojljvm9Ddqm7wLbjUOWoZXNrN6DAFWFw0oh7m1DizKGhbuSCVLslBhvibVac4vbB6FgTdT_X-eQ1wZ_fDAfHxkN0wsPeze0ikybO278");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-light-primary dark:text-text-dark-primary text-base font-medium leading-normal">Sitemap Monitor</h1>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal">Automation Tool</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-text-light-secondary dark:text-text-dark-secondary hover:bg-hover-light dark:hover:bg-hover-dark rounded-lg" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-light-secondary dark:text-text-dark-secondary hover:bg-hover-light dark:hover:bg-hover-dark rounded-lg" href="#">
+<span class="material-symbols-outlined text-xl">public</span>
+<p class="text-sm font-medium leading-normal">Websites</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined text-xl">history</span>
+<p class="text-sm font-medium leading-normal">监控日志</p>
+</a>
+</nav>
+</div>
+<div class="mt-auto flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-text-light-secondary dark:text-text-dark-secondary hover:bg-hover-light dark:hover:bg-hover-dark rounded-lg" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-light-secondary dark:text-text-dark-secondary hover:bg-hover-light dark:hover:bg-hover-dark rounded-lg" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<p class="text-sm font-medium leading-normal">Logout</p>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-6 lg:p-10">
+<div class="mx-auto max-w-7xl">
+<!-- PageHeading -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<h1 class="text-text-light-primary dark:text-text-dark-primary text-3xl font-bold tracking-tight">监控日志</h1>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-medium leading-normal tracking-wide shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined mr-2 text-base">sync</span>
+<span class="truncate">Run Manual Check</span>
+</button>
+</div>
+<!-- Card for Filters and Table -->
+<div class="mt-8 rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm">
+<!-- Toolbar with Filters -->
+<div class="flex flex-wrap items-center justify-between gap-4 p-4 border-b border-border-light dark:border-border-dark">
+<div class="flex flex-wrap items-center gap-4 flex-1">
+<!-- SearchBar -->
+<div class="flex-grow min-w-64 sm:max-w-xs">
+<label class="flex flex-col h-10 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-background-light dark:bg-background-dark">
+<div class="text-text-light-secondary dark:text-text-dark-secondary flex items-center justify-center pl-3">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input w-full flex-1 resize-none overflow-hidden rounded-r-lg text-text-light-primary dark:text-text-dark-primary focus:outline-none focus:ring-2 focus:ring-primary border-none bg-transparent h-full placeholder:text-text-light-secondary dark:placeholder:text-text-dark-secondary px-2 text-sm font-normal" placeholder="搜索网站名称或 URL..." value=""/>
+</div>
+</label>
+</div>
+<!-- Status Filter -->
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-md text-sm font-medium bg-primary text-white">全部</button>
+<button class="px-3 py-1.5 rounded-md text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary hover:bg-hover-light dark:hover:bg-hover-dark">成功</button>
+<button class="px-3 py-1.5 rounded-md text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary hover:bg-hover-light dark:hover:bg-hover-dark">失败</button>
+</div>
+</div>
+<!-- Date Picker Button -->
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 text-sm font-medium text-text-light-primary dark:text-text-dark-primary border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark hover:bg-hover-light dark:hover:bg-hover-dark">
+<span class="material-symbols-outlined text-xl">calendar_month</span>
+<span>Select Date</span>
+</button>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="text-xs text-text-light-secondary dark:text-text-dark-secondary uppercase bg-background-light dark:bg-background-dark">
+<tr>
+<th class="px-6 py-3" scope="col">执行时间</th>
+<th class="px-6 py-3" scope="col">监控网站</th>
+<th class="px-6 py-3 text-center" scope="col">新增页面</th>
+<th class="px-6 py-3" scope="col">执行结果</th>
+<th class="px-6 py-3 text-right" scope="col">操作</th>
+</tr>
+</thead>
+<tbody>
+<!-- Table Row 1: Success -->
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-hover-light dark:hover:bg-hover-dark">
+<td class="px-6 py-4 font-medium text-text-light-primary dark:text-text-dark-primary whitespace-nowrap">2024-07-21 14:30:15</td>
+<td class="px-6 py-4 text-text-light-secondary dark:text-text-dark-secondary">example.com</td>
+<td class="px-6 py-4 text-center text-text-light-secondary dark:text-text-dark-secondary">12</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-success/10 px-2.5 py-0.5 text-xs font-medium text-success">
+<span class="size-1.5 rounded-full bg-success"></span>
+                                        成功
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-primary hover:underline" href="#">详情</a>
+</td>
+</tr>
+<!-- Table Row 2: Failed -->
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-hover-light dark:hover:bg-hover-dark">
+<td class="px-6 py-4 font-medium text-text-light-primary dark:text-text-dark-primary whitespace-nowrap">2024-07-21 12:15:05</td>
+<td class="px-6 py-4 text-text-light-secondary dark:text-text-dark-secondary">another-site.net</td>
+<td class="px-6 py-4 text-center text-text-light-secondary dark:text-text-dark-secondary">0</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-danger/10 px-2.5 py-0.5 text-xs font-medium text-danger">
+<span class="size-1.5 rounded-full bg-danger"></span>
+                                        失败
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-primary hover:underline" href="#">详情</a>
+</td>
+</tr>
+<!-- Table Row 3: Success -->
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-hover-light dark:hover:bg-hover-dark">
+<td class="px-6 py-4 font-medium text-text-light-primary dark:text-text-dark-primary whitespace-nowrap">2024-07-20 18:00:22</td>
+<td class="px-6 py-4 text-text-light-secondary dark:text-text-dark-secondary">web-crawler-test.org</td>
+<td class="px-6 py-4 text-center text-text-light-secondary dark:text-text-dark-secondary">5</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-success/10 px-2.5 py-0.5 text-xs font-medium text-success">
+<span class="size-1.5 rounded-full bg-success"></span>
+                                        成功
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-primary hover:underline" href="#">详情</a>
+</td>
+</tr>
+<!-- Table Row 4: Success -->
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-hover-light dark:hover:bg-hover-dark">
+<td class="px-6 py-4 font-medium text-text-light-primary dark:text-text-dark-primary whitespace-nowrap">2024-07-20 09:45:10</td>
+<td class="px-6 py-4 text-text-light-secondary dark:text-text-dark-secondary">myblog.io</td>
+<td class="px-6 py-4 text-center text-text-light-secondary dark:text-text-dark-secondary">1</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-success/10 px-2.5 py-0.5 text-xs font-medium text-success">
+<span class="size-1.5 rounded-full bg-success"></span>
+                                        成功
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-primary hover:underline" href="#">详情</a>
+</td>
+</tr>
+<!-- Table Row 5: Failed -->
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-hover-light dark:hover:bg-hover-dark">
+<td class="px-6 py-4 font-medium text-text-light-primary dark:text-text-dark-primary whitespace-nowrap">2024-07-19 22:30:00</td>
+<td class="px-6 py-4 text-text-light-secondary dark:text-text-dark-secondary">example.com</td>
+<td class="px-6 py-4 text-center text-text-light-secondary dark:text-text-dark-secondary">0</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-danger/10 px-2.5 py-0.5 text-xs font-medium text-danger">
+<span class="size-1.5 rounded-full bg-danger"></span>
+                                        失败
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-primary hover:underline" href="#">详情</a>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Empty State (uncomment to test) -->
+<!--
+                    <div class="flex flex-col items-center justify-center p-16 text-center">
+                        <div class="flex items-center justify-center size-16 bg-background-light dark:bg-background-dark rounded-full mb-4">
+                            <span class="material-symbols-outlined text-4xl text-text-light-secondary dark:text-text-dark-secondary">summarize</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-text-light-primary dark:text-text-dark-primary">暂无日志记录</h3>
+                        <p class="mt-1 text-sm text-text-light-secondary dark:text-text-dark-secondary">没有找到符合筛选条件的日志记录。</p>
+                    </div>
+                    -->
+</div>
+<!-- Pagination -->
+<div class="flex flex-wrap items-center justify-between gap-4 p-4">
+<span class="text-sm text-text-light-secondary dark:text-text-dark-secondary">
+                        Showing <span class="font-medium text-text-light-primary dark:text-text-dark-primary">1</span> to <span class="font-medium text-text-light-primary dark:text-text-dark-primary">5</span> of <span class="font-medium text-text-light-primary dark:text-text-dark-primary">100</span> results
+                    </span>
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center justify-center h-9 w-9 rounded-md border border-border-light dark:border-border-dark text-text-light-secondary dark:text-text-dark-secondary hover:bg-hover-light dark:hover:bg-hover-dark">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</button>
+<button class="inline-flex items-center justify-center h-9 w-9 rounded-md border border-border-light dark:border-border-dark text-text-light-secondary dark:text-text-dark-secondary hover:bg-hover-light dark:hover:bg-hover-dark">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

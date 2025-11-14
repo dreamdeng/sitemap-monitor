@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx create-t3-app@latest . --default --noInstall)"
+      "Bash(npx create-t3-app@latest . --default --noInstall)",
+      "Bash(lsof:*)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:localhost)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
