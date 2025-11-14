@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { api } from "~/trpc/react";
 import { DashboardLayout } from "~/components/layout";
 import { Card, CardContent, CardHeader } from "~/components/ui/card";
@@ -35,6 +36,7 @@ import {
 } from "lucide-react";
 
 export default function FindingsPage() {
+  const router = useRouter();
   const [page, setPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const [isReadFilter, setIsReadFilter] = useState<boolean | undefined>(undefined);
@@ -372,7 +374,10 @@ export default function FindingsPage() {
                           onCheckedChange={() => handleSelectOne(finding.id)}
                         />
                       </TableCell>
-                      <TableCell>
+                      <TableCell
+                        className="cursor-pointer hover:bg-gray-50"
+                        onClick={() => router.push(`/findings/${finding.id}`)}
+                      >
                         <div className="flex items-center gap-2">
                           {!finding.isRead && (
                             <div className="h-2 w-2 rounded-full bg-blue-600" />
