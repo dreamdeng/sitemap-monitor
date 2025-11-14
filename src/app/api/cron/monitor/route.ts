@@ -7,6 +7,8 @@ import { env } from "~/env.mjs";
 import { db } from "~/server/db";
 import { MonitorOrchestrator } from "~/server/services/monitor/monitor-orchestrator";
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   try {
     // Verify cron secret
