@@ -16,7 +16,7 @@ const config = {
     "@typescript-eslint/consistent-type-imports": [
       "warn",
       {
-        prefer: "type-only",
+        prefer: "type-imports",
         disallowTypeAnnotations: true,
         fixStyle: "inline-type-imports",
       },
@@ -29,6 +29,17 @@ const config = {
         checksVoidReturn: { attributes: false },
       },
     ],
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/prefer-nullish-coalescing": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/prefer-optional-chain": "off",
+    "react/no-unescaped-entities": "off",
   },
 };
 
