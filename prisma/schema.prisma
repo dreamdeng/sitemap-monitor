@@ -1,0 +1,83 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ==================== Website Table ====================
+model Website {
+  id             String        @id @default(cuid())
+  name           String
+  sitemapUrl     String        @unique @map("sitemap_url")
+  status         WebsiteStatus @default(ACTIVE)
+  lastUrls       Json          @default("[]") @map("last_urls")
+  totalUrls      Int           @default(0) @map("total_urls")
+  lastCheckTime  DateTime?     @map("last_check_time")
+  checkFrequency Int           @default(12) @map("check_frequency")
+  createdAt      DateTime      @default(now()) @map("created_at")
+  updatedAt      DateTime      @updatedAt @map("updated_at")
+
+  findings    Finding[]
+  monitorLogs MonitorLog[]
+
+  @@map("websites")
+  @@index([status])
+  @@index([lastCheckTime])
+}
+
+enum WebsiteStatus {
+  ACTIVE
+  PAUSED
+}
+
+// ==================== Finding Table ====================
+model Finding {
+  id          String   @id @default(cuid())
+  websiteId   String   @map("website_id")
+  url         String
+  title       String   @default("")
+  description String   @default("") @db.Text
+  keywords    String   @default("") @db.Text
+  h1          String   @default("")
+  isRead      Boolean  @default(false) @map("is_read")
+  foundAt     DateTime @default(now()) @map("found_at")
+
+  website Website @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+
+  @@unique([websiteId, url])
+  @@map("findings")
+  @@index([websiteId])
+  @@index([foundAt])
+  @@index([isRead])
+}
+
+// ==================== Monitor Log Table ====================
+model MonitorLog {
+  id              String        @id @default(cuid())
+  websiteId       String?       @map("website_id")
+  status          MonitorStatus @default(SUCCESS)
+  newCount        Int           @default(0) @map("new_count")
+  errorMessage    String?       @map("error_message") @db.Text
+  durationSeconds Int           @default(0) @map("duration_seconds")
+  executedAt      DateTime      @default(now()) @map("executed_at")
+
+  website Website? @relation(fields: [websiteId], references: [id], onDelete: SetNull)
+
+  @@map("monitor_logs")
+  @@index([websiteId])
+  @@index([executedAt])
+  @@index([status])
+}
+
+enum MonitorStatus {
+  SUCCESS
+  FAILED
+  PARTIAL
+}
